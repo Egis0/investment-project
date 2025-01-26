@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="lt">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <meta http-equiv="X-UA-Compatible" content="ie=edge">
+        <title>Investavimo projektas</title>
+
+        <style>
+            #error-messages {
+                background-color: rgb(255, 232, 232);
+                border: 1px solid red;
+                color: red;
+                display: none;
+                font-size: 12px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                padding: 10px 25px;
+                max-width: 250px;
+            }
+            #message {
+                border: 1px solid green;
+                color: green;
+                display: none;
+                font-size: 12px;
+                font-weight: bold;
+                margin-bottom: 10px;
+                padding: 10px 25px;
+                max-width: 250px;
+            }
+            table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+
+            td, th {
+                border: 1px solid #dddddd;
+                text-align: left;
+                padding: 8px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <h1>Investuojama suma</h1>
+        <div class="form">
+            <ul id="error-messages"></ul>
+            <div id="message"></div>
+
+            <label for="sum">Suma, €</label>
+            <input type="number" id="sum" required>
+
+            <button type="submit" id="btn-submit">Investuoti</button>
+        </div>
+        <div id="payment-block" style="display:none;">
+            <h1>Mokėjimų grafikas</h1>
+            <h4>Investuojama suma: <span id="initial-sum"></span> €</h4>
+            <h4>Palūkanų procentas: <span id="percent"></span>%</h4>
+            <h4>Palūkanų suma: <span id="interest-sum"></span> €</h4>
+            <table>
+                <tr>
+                    <th>Data</th>
+                    <th>Išmokama suma</th>
+                </tr>
+                <tbody id="payment-list"></tbody>
+            </table>
+        </div>
+        <script src="invest-form.js"></script>
+    </body>
+</html>
